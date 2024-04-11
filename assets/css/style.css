@@ -80,8 +80,10 @@ button {
 }
 
 .value {
+  max-width: 80%;
   color: #fff;
   cursor: pointer;
+  word-wrap: break-word;
 }
 
 .value.active {
