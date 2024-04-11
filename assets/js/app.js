@@ -41,7 +41,12 @@ window.addEventListener("load", () => {
       action.removeChild(inner);
     });
 
+    value.addEventListener("click", function (e) {
+      this.classList.toggle("active");
+    });
+
     edit.addEventListener("click", function (e) {
+      e.stopPropagation();
       const formChild = document.createElement("form");
       formChild.classList.add("form");
       inner.insertAdjacentElement("beforebegin", formChild);
@@ -64,7 +69,6 @@ window.addEventListener("load", () => {
       formChild.addEventListener("submit", function (e) {
         e.preventDefault();
         value.innerHTML = inputChild.value;
-        value.style.textDecoration = "line-through";
         inner.classList.remove("hidden");
         this.remove();
       });

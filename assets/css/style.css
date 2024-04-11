@@ -81,6 +81,12 @@ button {
 
 .value {
   color: #fff;
+  cursor: pointer;
+}
+
+.value.active {
+  text-decoration: line-through;
+  color: #ccc;
 }
 
 .hidden {
