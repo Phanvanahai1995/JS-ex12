@@ -17,7 +17,7 @@ window.addEventListener("load", () => {
     action.appendChild(inner);
 
     const value = document.createElement("span");
-    value.innerHTML = inputEl.value;
+    value.innerText = inputEl.value;
     value.classList.add("value");
     inner.appendChild(value);
 
@@ -61,14 +61,15 @@ window.addEventListener("load", () => {
 
       const btnChild = document.createElement("button");
       btnChild.classList.add("btn");
-      btnChild.innerHTML = "Add task";
+      btnChild.innerText = "Add task";
       formChild.appendChild(btnChild);
 
       inner.classList.add("hidden");
+      inputChild.focus();
 
       formChild.addEventListener("submit", function (e) {
         e.preventDefault();
-        value.innerHTML = inputChild.value;
+        value.innerText = inputChild.value;
         inner.classList.remove("hidden");
         this.remove();
       });
